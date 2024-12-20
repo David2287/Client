@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.openjfx.controllers.page.AssignReviewerReviewerListCell"
+            onMouseClicked="#reviewerClicked"
+>
+    <padding>
+        <Insets top="8" bottom="8"/>
+    </padding>
+    <left>
+        <HBox>
+            <Label fx:id="reviewerName" textFill="black"/>
+            <Label fx:id="interestArea" textFill="black"/>
+        </HBox>
+    </left>
+    <right>
+        <HBox>
+            <Label text="Level:" textFill="lightslategray"/>
+            <Label fx:id="expertise" textFill="lightslategray"/>
+        </HBox>
+    </right>
+</BorderPane>

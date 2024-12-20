@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox prefWidth="Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.openjfx.controllers.page.MyPaperListCell">
+    <BorderPane prefWidth="Infinity" style="-fx-background-color: white; -fx-background-radius: 8">
+        <VBox.margin>
+            <Insets top="8" bottom="8"/>
+        </VBox.margin>
+        <padding>
+            <Insets left="32" right="32" top="16" bottom="16"/>
+        </padding>
+        <left>
+            <VBox alignment="CENTER_LEFT">
+                <Label fx:id="paperName">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+                <Label fx:id="keywords" textFill="gray"/>
+                <Label fx:id="authors" textFill="gray"/>
+            </VBox>
+        </left>
+        <center>
+            <HBox alignment="CENTER">
+                <Label text="Submitted by:">
+                    <font>
+                        <Font name="System Bold"/>
+                    </font>
+                </Label>
+                <Label fx:id="submittedName">
+                    <font>
+                        <Font name="System Bold"/>
+                    </font>
+                </Label>
+            </HBox>
+        </center>
+        <right>
+            <HBox alignment="CENTER">
+                <VBox alignment="CENTER_LEFT">
+                    <padding>
+                        <Insets right="16"/>
+                    </padding>
+                    <Label text="submitted at:"/>
+                    <Label fx:id="submittedTime"/>
+                </VBox>
+                <VBox alignment="CENTER" maxWidth="150" prefWidth="150">
+                    <StackPane fx:id="statusBackground" style="-fx-background-color: #428452;-fx-background-radius: 32"
+                               prefHeight="36" maxHeight="36" onMouseClicked="#onStatusButtonClicked">
+                        <Label fx:id="paperStatus" textFill="white" prefHeight="16" maxHeight="16">
+                            <font>
+                                <Font name="System Bold" size="14"/>
+                            </font>
+                        </Label>
+                    </StackPane>
+                    <HBox fx:id="statusContainer" alignment="CENTER"/>
+                </VBox>
+
+            </HBox>
+        </right>
+    </BorderPane>
+</VBox>

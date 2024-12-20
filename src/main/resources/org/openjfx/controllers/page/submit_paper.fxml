@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import org.openjfx.controllers.page.MainPageLeftBannerController?>
+<?import tornadofx.control.ListMenu?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import org.openjfx.controllers.page.GeneralTopLayout?>
+<?import org.openjfx.helper.AutoTrimTextField?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.openjfx.controllers.page.SubmitPaperController"
+            prefWidth="1396.0"
+            prefHeight="734.0">
+
+    <left>
+        <MainPageLeftBannerController index="1"/>
+    </left>
+    <top>
+        <GeneralTopLayout titleText="Paper Submission"/>
+    </top>
+    <center>
+        <StackPane prefWidth="Infinity">
+            <padding>
+                <Insets left="32" right="32" bottom="16" top="16"/>
+            </padding>
+            <VBox alignment="CENTER_LEFT">
+                <Label text="Paper Name: ">
+                    <padding>
+                        <Insets bottom="4"/>
+                    </padding>
+                </Label>
+                <AutoTrimTextField fx:id="paperName"/>
+                <HBox>
+                    <padding>
+                        <Insets top="8"/>
+                    </padding>
+                    <Label text="Conference Name: "/>
+                    <Label fx:id="conferenceName"/>
+                </HBox>
+                <HBox>
+                    <padding>
+                        <Insets top="8" bottom="8"/>
+                    </padding>
+                    <Label text="Conference chair: "/>
+                    <Label fx:id="chairName"/>
+                </HBox>
+                <BorderPane>
+                    <center>
+                        <StackPane style="-fx-background-color: white;-fx-background-radius: 8">
+                            <padding>
+                                <Insets left="32" right="32" top="24" bottom="32"/>
+                            </padding>
+                            <VBox alignment="CENTER" fx:id="selectPaperContainer">
+                                <Label text="Upload your paper(s)">
+                                    <font>
+                                        <Font  size="24" name="System Bold"/>
+                                    </font>
+                                </Label>
+                                <Label text="(only support pdf, doc, docx)" textFill="red">
+                                    <font>
+                                        <Font name="System Bold"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="16"/>
+                                    </VBox.margin>
+                                </Label>
+                                <StackPane style="-fx-border-color: #a6b9ff;-fx-border-radius: 8;-fx-background-color: #f6f8ff;-fx-background-radius: 8"  prefHeight="400" fx:id="selectPaperParentView">
+                                    <padding>
+                                        <Insets left="16" right="16" top="16" bottom="16"/>
+                                    </padding>
+                                    <VBox alignment="CENTER" fx:id="folderContainer">
+                                        <ImageView fitHeight="48" fitWidth="48" >
+                                            <image>
+                                                <Image url="@../../images/folder.png"/>
+                                            </image>
+                                        </ImageView>
+                                        <Label textFill="#b2b2b2" text="Click here to add files"/>
+                                    </VBox>
+                                    <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+                                        <VBox fx:id="fileListContainer"/>
+                                    </ScrollPane>
+                                </StackPane>
+                            </VBox>
+                        </StackPane>
+                    </center>
+                    <right>
+                        <VBox>
+                            <padding>
+                                <Insets left="16" />
+                            </padding>
+                            <Label text="Co-Authors:">
+                                <padding>
+                                    <Insets bottom="4"/>
+                                </padding>
+                            </Label>
+                            <StackPane alignment="CENTER_RIGHT">
+                                <AutoTrimTextField fx:id="authorField" editable="false"/>
+                                <MenuButton fx:id="authorSelectMenuButton"/>
+                            </StackPane>
+
+                            <Label text="Keywords: ">
+                                <padding>
+                                    <Insets top="8" bottom="4"/>
+                                </padding>
+                            </Label>
+                            <StackPane>
+                                <AutoTrimTextField fx:id="keywordField" editable="false"/>
+                                <Button text="Add Keywords" StackPane.alignment="CENTER_RIGHT" style="-fx-background-color: #1161d1; -fx-background-radius: 8" textFill="white" onMouseClicked="#showAddKeywordDialog"/>
+                            </StackPane>
+
+                            <FlowPane fx:id="preDefineKeywordFlowPane"/>
+                        </VBox>
+                    </right>
+                </BorderPane>
+                <HBox alignment="CENTER">
+                    <VBox.margin>
+                        <Insets top="16"/>
+                    </VBox.margin>
+                    <Label text="Cancel" textFill="black" onMouseClicked="#cancelSubmit">
+                    </Label>
+                    <Region prefWidth="48"/>
+                    <Button text="Submit" onMouseClicked="#submitPaper" textFill="white" style="-fx-background-color: #3aa5d3;-fx-background-radius: 8;-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); -fx-font-weight: bold">
+                        <padding>
+                            <Insets left="48" right="48" top="8" bottom="8"/>
+                        </padding>
+                        <VBox.margin>
+                            <Insets top="16"/>
+                        </VBox.margin>
+                    </Button>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+
+</BorderPane>
+
