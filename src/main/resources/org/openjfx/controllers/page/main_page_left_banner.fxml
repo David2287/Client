@@ -28,29 +28,29 @@
                     </Label>
                 </HBox>
 
-                <HBox fx:id="paperSubmission" onMouseClicked="#onItemClick">
-                    <Pane fx:id="paperManagementIndicator" prefWidth="4" style="-fx-background-color: #0C7CBA" visible="false" />
-                    <Label fx:id="paperManagementText" text="Paper Submission">
-                        <padding>
-                            <Insets left="4" />
-                        </padding>
-                    </Label>
-                    <padding>
-                        <Insets bottom="8" />
-                    </padding>
-                </HBox>
+<!--                <HBox fx:id="paperSubmission" onMouseClicked="#onItemClick">-->
+<!--                    <Pane fx:id="paperManagementIndicator" prefWidth="4" style="-fx-background-color: #0C7CBA" visible="false" />-->
+<!--                    <Label fx:id="paperManagementText" text="Paper Submission">-->
+<!--                        <padding>-->
+<!--                            <Insets left="4" />-->
+<!--                        </padding>-->
+<!--                    </Label>-->
+<!--                    <padding>-->
+<!--                        <Insets bottom="8" />-->
+<!--                    </padding>-->
+<!--                </HBox>-->
 
-                <HBox fx:id="reviewManagement" onMouseClicked="#onItemClick">
-                    <Pane fx:id="reviewManagementIndicator" prefWidth="4" style="-fx-background-color: #0C7CBA" visible="false" />
-                    <Label fx:id="reviewManagementText" text="Review Management">
-                        <padding>
-                            <Insets left="4" />
-                        </padding>
-                    </Label>
-                    <padding>
-                        <Insets bottom="8" />
-                    </padding>
-                </HBox>
+<!--                <HBox fx:id="reviewManagement" onMouseClicked="#onItemClick">-->
+<!--                    <Pane fx:id="reviewManagementIndicator" prefWidth="4" style="-fx-background-color: #0C7CBA" visible="false" />-->
+<!--                    <Label fx:id="reviewManagementText" text="Review Management">-->
+<!--                        <padding>-->
+<!--                            <Insets left="4" />-->
+<!--                        </padding>-->
+<!--                    </Label>-->
+<!--                    <padding>-->
+<!--                        <Insets bottom="8" />-->
+<!--                    </padding>-->
+<!--                </HBox>-->
 
             </VBox>
         </VBox>

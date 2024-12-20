@@ -64,6 +64,7 @@
                     <AutoTrimTextField fx:id="lastName"/>
                 </VBox>
             </HBox>
+            
             <VBox>
                 <padding>
                     <Insets left="4" top="8" bottom="8" right="4"/>
@@ -71,6 +72,7 @@
                 <Label text="Email" style="-fx-font-weight: bold"/>
                 <AutoTrimTextField fx:id="email"/>
             </VBox>
+
             <VBox>
                 <padding>
                     <Insets left="4" top="8" bottom="8" right="4"/>
@@ -78,6 +80,7 @@
                 <Label text="Password" style="-fx-font-weight: bold"/>
                 <PasswordField fx:id="password" promptText="The password must have at least 1 digit number 1 upper case and 1 lower case"/>
             </VBox>
+
             <VBox>
                 <padding>
                     <Insets left="4" top="8" bottom="8" right="4"/>
@@ -85,13 +88,7 @@
                 <Label text="Confirmed password" style="-fx-font-weight: bold"/>
                 <PasswordField fx:id="confirmedPassword" promptText="The password must have at least 1 digit number 1 upper case and 1 lower case"/>
             </VBox>
-            <VBox>
-                <padding>
-                    <Insets left="4" top="8" bottom="8" right="4"/>
-                </padding>
-                <Label text="Highest qualification" style="-fx-font-weight: bold"/>
-                <AutoTrimTextField fx:id="highestQualification" />
-            </VBox>
+
             <VBox>
                 <padding>
                     <Insets left="4" top="8" bottom="8" right="4"/>
@@ -99,17 +96,7 @@
                 <Label text="Mobile number" style="-fx-font-weight: bold"/>
                 <AutoTrimTextField fx:id="mobileNumber"/>
             </VBox>
-            <VBox>
-                <padding>
-                    <Insets left="4" top="8" bottom="8" right="4"/>
-                </padding>
-                <Label text="Interest area" style="-fx-font-weight: bold"/>
-                <StackPane>
-                    <AutoTrimTextField fx:id="interestArea" disable="true"/>
-                    <Button text="Add" onMouseClicked="#addInterestingAreaClicked" StackPane.alignment="CENTER_RIGHT"/>
-                </StackPane>
 
-            </VBox>
             <VBox>
                 <padding>
                     <Insets left="4" top="8" bottom="8" right="4"/>
@@ -117,6 +104,7 @@
                 <Label text="Employer's details" style="-fx-font-weight: bold"/>
                 <AutoTrimTextField fx:id="employerDetails" onAction="#sign_up"/>
             </VBox>
+
             <Button text="Sign up" onAction="#sign_up" style="-fx-background-color: #3aa6dd" textFill="white" prefWidth="Infinity" >
                 <font>
                     <Font size="18"/>

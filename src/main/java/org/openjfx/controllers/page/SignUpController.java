@@ -66,34 +66,17 @@ public class SignUpController implements Initializable {
         allTextFields.add(password);
         allTextFields.add(confirmedPassword);
         allTextFields.add(email);
-        allTextFields.add(highestQualification);
         allTextFields.add(mobileNumber);
-        allTextFields.add(interestArea);
         allTextFields.add(employerDetails);
         interestAreas = new HashMap<>();
     }
 
-    @FXML
-    public void back(MouseEvent event) throws IOException {
-        SceneHelper.startPage(getClass(), event, PageNames.LOG_IN, true);
-    }
-
-    @FXML
-    void addInterestingAreaClicked(MouseEvent event) throws IOException {
-        SceneHelper.showDialogStage(getClass(),350,150,PageNames.ADD_INTERSTING_AREA_DIALOG,(AddInterestingAreaDialog dialogController)->{
-            dialogController.setOnAddInterestingAreaListener(this::refreshViewWithNewInterestingArea);
-        });
-    }
-
-    private void refreshViewWithNewInterestingArea(Pair<String, Integer> newInterestingArea) {
-        this.interestAreas.put(newInterestingArea.getKey(), newInterestingArea.getValue());
-        this.interestArea.setText(this.interestArea.getTrimText() + String.format("(%s:%s)", newInterestingArea.getKey(), newInterestingArea.getValue()));
-    }
+// Removed addInterestingAreaClicked method since interestArea is deleted.
 
     @FXML
     public void sign_up(ActionEvent event) throws IOException {
         List<TextField> emptyField = InputValidation.findTextFieldIsEmpty(allTextFields);
-        if(emptyField.size()>0){
+        if(emptyField.size() > 0) {
             DialogHelper.showErrorDialog("You need to fill up all fields");
             Collections.reverse(emptyField);
             emptyField.forEach(InputValidation::setFocusAndSetErrorStyle);
@@ -109,11 +92,18 @@ public class SignUpController implements Initializable {
             InputValidation.setFocusAndSetErrorStyle(password);
             return;
         }
-        if (this.interestAreas.size() <= 0) {
-            DialogHelper.showErrorDialog("You need to fill up at least 1 interesting area");
-            return;
-        }
-        RegisterdUser newUser = new RegisterdUser(email.getTrimText(), password.getText(), firstName.getTrimText(), lastName.getTrimText(), highestQualification.getTrimText(), this.interestAreas, employerDetails.getTrimText());
+        RegisterdUser newUser = new RegisterdUser(
+                email.getTrimText(),
+                password.getText(),
+                firstName.getTrimText(),
+                lastName.getTrimText(),
+                employerDetails.getTrimText()
+        ) {
+            @Override
+            public Map<String, Integer> getInterestAreas() {
+                return Map.of();
+            }
+        };
         try {
             if (userService.searchAUser(email.getTrimText()) != null) {
                 DialogHelper.showErrorDialog("The email has been already registered in the system");
@@ -127,4 +117,10 @@ public class SignUpController implements Initializable {
         }
         SceneHelper.startPage(getClass(), event, PageNames.CONFERENCE_MANAGEMENT, true);
     }
+
+    @FXML
+    public void back(MouseEvent event) throws IOException {
+        SceneHelper.startPage(getClass(), event, PageNames.LOG_IN, true);
+    }
+
 }

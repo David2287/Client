@@ -26,35 +26,35 @@ public class MainPageLeftBannerController extends BorderPane implements Initiali
     @FXML
     private HBox conferenceManagement;
 
-    @FXML
-    private HBox paperSubmission;
-
-    @FXML
-    private HBox reviewManagement;
+//    @FXML
+//    private HBox paperSubmission;
+//
+//    @FXML
+//    private HBox reviewManagement;
 
     @FXML
     private Label conferenceManagementText;
 
-    @FXML
-    private Label paperManagementText;
-
-    @FXML
-    private Label reviewManagementText;
+//    @FXML
+//    private Label paperManagementText;
+//
+//    @FXML
+//    private Label reviewManagementText;
 
     @FXML
     private Pane conferenceManagementIndicator;
 
-    @FXML
-    private Pane paperManagementIndicator;
-
-    @FXML
-    private Pane reviewManagementIndicator;
+//    @FXML
+//    private Pane paperManagementIndicator;
+//
+//    @FXML
+//    private Pane reviewManagementIndicator;
 
     private int index;
 
     private static final int CONFERENCE_MANAGEMENT = 0;
-    private static final int PAPER_MANAGEMENT = 1;
-    private static final int REVIEW_MANAGEMENT = 2;
+//    private static final int PAPER_MANAGEMENT = 1;
+//    private static final int REVIEW_MANAGEMENT = 2;
 
     public MainPageLeftBannerController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main_page_left_banner.fxml"));
@@ -78,12 +78,12 @@ public class MainPageLeftBannerController extends BorderPane implements Initiali
             case "conferenceManagement":
                 SceneHelper.startPage(getClass(),event, PageNames.CONFERENCE_MANAGEMENT,true);
                 break;
-            case "paperSubmission":
-                SceneHelper.startPage(getClass(),event,PageNames.PAPER_MANAGEMENT,true);
-                break;
-            case "reviewManagement":
-                SceneHelper.startPage(getClass(),event,PageNames.REVIEW_MANAGEMENT,true);
-                break;
+//            case "paperSubmission":
+//                SceneHelper.startPage(getClass(),event,PageNames.PAPER_MANAGEMENT,true);
+//                break;
+//            case "reviewManagement":
+//                SceneHelper.startPage(getClass(),event,PageNames.REVIEW_MANAGEMENT,true);
+//                break;
             default:
                 break;
         }
@@ -95,12 +95,12 @@ public class MainPageLeftBannerController extends BorderPane implements Initiali
             case CONFERENCE_MANAGEMENT:
                 setSelectedState(conferenceManagementIndicator,conferenceManagementText);
                 break;
-            case PAPER_MANAGEMENT:
-                setSelectedState(paperManagementIndicator,paperManagementText);
-                break;
-            case REVIEW_MANAGEMENT:
-                setSelectedState(reviewManagementIndicator,reviewManagementText);
-                break;
+//            case PAPER_MANAGEMENT:
+//                setSelectedState(paperManagementIndicator,paperManagementText);
+//                break;
+//            case REVIEW_MANAGEMENT:
+//                setSelectedState(reviewManagementIndicator,reviewManagementText);
+//                break;
             default:
                 break;
         }
@@ -117,14 +117,14 @@ public class MainPageLeftBannerController extends BorderPane implements Initiali
      */
     private void restoreAllState(){
         conferenceManagementIndicator.setVisible(false);
-        paperManagementIndicator.setVisible(false);
-        reviewManagementIndicator.setVisible(false);
+//        paperManagementIndicator.setVisible(false);
+//        reviewManagementIndicator.setVisible(false);
         conferenceManagementText.setTextFill(Paint.valueOf("#000000"));
-        paperManagementText.setTextFill(Paint.valueOf("#000000"));
-        reviewManagementText.setTextFill(Paint.valueOf("#000000"));
+//        paperManagementText.setTextFill(Paint.valueOf("#000000"));
+//        reviewManagementText.setTextFill(Paint.valueOf("#000000"));
         conferenceManagementText.setFont(Font.font("System", FontWeight.NORMAL,18));
-        paperManagementText.setFont(Font.font("System", FontWeight.NORMAL,18));
-        reviewManagementText.setFont(Font.font("System", FontWeight.NORMAL,18));
+//        paperManagementText.setFont(Font.font("System", FontWeight.NORMAL,18));
+//        reviewManagementText.setFont(Font.font("System", FontWeight.NORMAL,18));
     }
 
     public int getIndex() {

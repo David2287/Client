@@ -35,10 +35,6 @@ public class GeneralAlertView extends AbstractAlertDialog {
 
     private final Region root;
 
-
-
-
-
     private WeakReference<Node> callerReference;
 
     public GeneralAlertView() {

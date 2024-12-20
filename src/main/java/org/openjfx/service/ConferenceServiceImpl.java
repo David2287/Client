@@ -1,5 +1,6 @@
 package org.openjfx.service;
 
+import org.openjfx.model.Conference;
 import org.openjfx.model.factory.DataModelFactory;
 import org.openjfx.model.interfaces.Chair;
 

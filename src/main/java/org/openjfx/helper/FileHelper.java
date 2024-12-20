@@ -19,19 +19,19 @@ public final class FileHelper {
 
     }
 
-    public PaperFile uploadFileToServer(String paperName, String originalAbsolutePath) throws IOException {
-        if (!Files.exists(Path.of(PAPER_FOLDER))) {
-            if (!new java.io.File(PAPER_FOLDER).mkdir()) {
-                throw new IOException("Cannot create paper folder");
-            }
-        }
-
-        Path copied = Paths.get(PAPER_FOLDER, UUID.randomUUID() + "." + originalAbsolutePath.substring(originalAbsolutePath.lastIndexOf(".") + 1));
-        String storedPath = copied.toString();
-        Path originalPath = Paths.get(originalAbsolutePath);
-        Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
-        return new PaperFile(paperName, storedPath);
-    }
+//    public PaperFile uploadFileToServer(String paperName, String originalAbsolutePath) throws IOException {
+//        if (!Files.exists(Path.of(PAPER_FOLDER))) {
+//            if (!new java.io.File(PAPER_FOLDER).mkdir()) {
+//                throw new IOException("Cannot create paper folder");
+//            }
+//        }
+//
+//        Path copied = Paths.get(PAPER_FOLDER, UUID.randomUUID() + "." + originalAbsolutePath.substring(originalAbsolutePath.lastIndexOf(".") + 1));
+//        String storedPath = copied.toString();
+//        Path originalPath = Paths.get(originalAbsolutePath);
+//        Files.copy(originalPath, copied, StandardCopyOption.REPLACE_EXISTING);
+//        return new PaperFile(paperName, storedPath);
+//    }
 
     public Optional<String> getFileExtensionByStringHandling(String filename) {
         return Optional.ofNullable(filename)

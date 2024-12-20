@@ -26,27 +26,27 @@ public class AdminConferenceCell implements Initializable {
     private Label chairName;
 
 
-    private Conference conference;
+    //private Conference conference;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    public Conference getConference() {
-        return conference;
-    }
+//    public Conference getConference() {
+//        return conference;
+//    }
 
-    public void setConference(Conference conference) {
-        this.conference = conference;
-        initViews(conference);
-    }
+//    public void setConference(Conference conference) {
+//        this.conference = conference;
+//        initViews(conference);
+//    }
 
-    private void initViews(Conference conference) {
-        this.conferenceName.setText(conference.getName());
-        this.deadline.setText(TimeHelper.convertToDisplayTime(conference.getDeadline()));
-        this.title.setText(conference.getTitle());
-        this.topic.setText(conference.getTopic());
-        this.chairName.setText(conference.getChairName());
-    }
+//    private void initViews(Conference conference) {
+//        this.conferenceName.setText(conference.getName());
+//        this.deadline.setText(TimeHelper.convertToDisplayTime(conference.getDeadline()));
+//        this.title.setText(conference.getTitle());
+//        this.topic.setText(conference.getTopic());
+//        this.chairName.setText(conference.getChairName());
+//    }
 }

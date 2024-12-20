@@ -30,7 +30,7 @@ public class AdminPageController implements Initializable {
     @FXML
     private VBox userListContainer;
 
-    private final ConferenceService conferenceService = ConferenceService.getDefaultInstance();
+//    private final ConferenceService conferenceService = ConferenceService.getDefaultInstance();
 
     private final UserService userService = UserService.getDefaultInstance();
 
@@ -41,29 +41,29 @@ public class AdminPageController implements Initializable {
 
     }
 
-    private void initPage(Admin admin) {
-        try {
-            List<Node> allConference = conferenceService.searchAllConference().stream().map(this::getConferenceCell).filter(Objects::nonNull).collect(Collectors.toList());
-            conferenceListContainer.getChildren().setAll(allConference);
-            List<Node> allUser = userService.findAllUser(admin).stream().map(this::getUserCell).filter(Objects::nonNull).collect(Collectors.toList());
-            userListContainer.getChildren().setAll(allUser);
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-    }
+//    private void initPage(Admin admin) {
+//        try {
+//            List<Node> allConference = conferenceService.searchAllConference().stream().map(this::getConferenceCell).filter(Objects::nonNull).collect(Collectors.toList());
+//            conferenceListContainer.getChildren().setAll(allConference);
+//            List<Node> allUser = userService.findAllUser(admin).stream().map(this::getUserCell).filter(Objects::nonNull).collect(Collectors.toList());
+//            userListContainer.getChildren().setAll(allUser);
+//        } catch (IOException exception) {
+//            exception.printStackTrace();
+//        }
+//    }
 
-    private Node getConferenceCell(Conference conference) {
-        try {
-            FXMLLoader loader = SceneHelper.createViewWithResourceName(getClass(), PageNames.ADMIN_CONFERENCE_CELL);
-            Node result = loader.load();
-            AdminConferenceCell conferenceCell = loader.getController();
-            conferenceCell.setConference(conference);
-            return result;
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-        return null;
-    }
+//    private Node getConferenceCell(Conference conference) {
+//        try {
+//            FXMLLoader loader = SceneHelper.createViewWithResourceName(getClass(), PageNames.ADMIN_CONFERENCE_CELL);
+//            Node result = loader.load();
+//            AdminConferenceCell conferenceCell = loader.getController();
+//            conferenceCell.setConference(conference);
+//            return result;
+//        } catch (IOException exception) {
+//            exception.printStackTrace();
+//        }
+//        return null;
+//    }
 
     private Node getUserCell(RegisterdUser user) {
         try {
@@ -84,6 +84,6 @@ public class AdminPageController implements Initializable {
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
-        initPage(admin);
+        //initPage(admin);
     }
 }
